@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Solar Energy - MB Energy Tech</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="MB Energy Tech Logo" class="logo-img1" />
+     
+    </div>
+    <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li class="dropdown">
+        <a href="services.html" class="nav-link active">Services</a>
+        <ul class="dropdown-content">
+          <li><a href="solar-energy.html">Solar Energy</a></li>
+          <li><a href="solar-street-lights.html">Solar Street Lights</a></li>
+          <li><a href="water-treatment.html">Solar Water Treatment</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <!-- Language Switch -->
+<div class="lang-switch">
+    <select onchange="changeLanguage(this.value)">
+      <option value="en">English</option>
+      <option value="hi">हिंदी</option>
+    </select>
+    </div>
+  </div>
+  </nav>
+  <main>
+    <section class="carousel-section">
+        <div class="carousel">
+          <div class="slides">
+            <img src="caral1.jpg" alt="Solar Panel 1" class="carousel-image">
+            <img src="caral2.webp" alt="Solar Panel 2" class="carousel-image">
+            <img src="caral3.jpg" alt="Solar Panel 3" class="carousel-image">
+            <img src="caral4.jpg" alt="Solar Panel 4" class="carousel-image">
+            <img src="caral5.webp" alt="Solar Panel 5" class="carousel-image">
+          </div>
+          <button class="prev">&#10094;</button>
+          <button class="next">&#10095;</button>
+          <div class="dots"></div> <!-- Navigation dots -->
+        </div>
+      </section>
+      <h1>Solar Energy</h1>
+    <p>Harness the power of the sun with our advanced solar energy solutions.</p>
+    <section>
+      <h2>What We Offer</h2>
+      <ul>
+        <li>On-grid and Off-grid Solar Installations</li>
+        <li>Residential and Commercial Solar Panels</li>
+        <li>Maintenance and Monitoring Systems</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="solar-energy.html">Solar Energy</a></li>
+        <li><a href="solar-street-lights.html">Solar Street Lights</a></li>
+        <li><a href="water-treatment.html">Solar Water Treatment Plant</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-column">
+      <h4>Legal</h4>
+      <ul class="footer-links">
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms-of-service.html">Terms of Services</a></li>
+      <li><a href="copyright.html">Copyright Policy</a></li>
+      </ul>
+      </div>
+       
+     <div class="footer-column">
+      <h4>Contact</h4>
+      <ul class="contact-links">
+      <li> <p> Dakshin-khila, Howrah, 711410</p></li>
+      <li><a href="mailto:mbenergytech@gmail.com">mbenergytech@gmail.com</a></li>
+      <li><a href="tel:+918609161145">+91 8609161145</a>, <a href="tel:+918768751868">+91 8768751868</a></li>
+      </ul>
+      </div>
+    </div>
+  <div class="footer-bottom">
+    <p>© 2025 | MB Energy Tech | All rights reserved</p>
+  </div>
+</footer>
+
+ <script>
+    const slides = document.querySelector('.slides');
+    const images = document.querySelectorAll('.carousel-image');
+    const totalImages = images.length;
+    const dotsContainer = document.querySelector('.dots');
+    let index = 0;
+  
+    // Create dots dynamically
+    for (let i = 0; i < totalImages; i++) {
+      const dot = document.createElement('span');
+      dot.addEventListener('click', () => {
+        index = i;
+        updateCarousel();
+      });
+      dotsContainer.appendChild(dot);
+    }
+  
+    const dots = document.querySelectorAll('.dots span');
+  
+    document.querySelector('.next').addEventListener('click', () => {
+      index = (index + 1) % totalImages;
+      updateCarousel();
+    });
+  
+    document.querySelector('.prev').addEventListener('click', () => {
+      index = (index - 1 + totalImages) % totalImages;
+      updateCarousel();
+    });
+  
+    function updateCarousel() {
+      slides.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+    }
+  
+    // Initialize
+    updateCarousel();
+  </script>
+  
+</body>
+</html>
